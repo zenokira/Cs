@@ -1,0 +1,7 @@
+C:\Users\B204\Desktop\수강생203\김동수\test\bin\Debug\test.exe.config
+C:\Users\B204\Desktop\수강생203\김동수\test\bin\Debug\test.exe
+C:\Users\B204\Desktop\수강생203\김동수\test\bin\Debug\test.pdb
+C:\Users\B204\Desktop\수강생203\김동수\test\obj\Debug\test.csproj.AssemblyReference.cache
+C:\Users\B204\Desktop\수강생203\김동수\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+C:\Users\B204\Desktop\수강생203\김동수\test\obj\Debug\test.exe
+C:\Users\B204\Desktop\수강생203\김동수\test\obj\Debug\test.pdb
