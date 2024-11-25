@@ -1,0 +1,61 @@
+
+고유의 속성을 가지는 물리적, 추상적인 것 : 객체
+객체를 정의한 것 : 클래스
+정의된 클래스에 메모리가 올라간 것  : 인스턴스
+
+
+B d = new A();
+
+파생 클래스에 부모 클래스를 담을 수 없다.
+
+
+
+this : 클래스 내에서 나 자신을 가리킴
+
+base : 클래스 내에서 부모 클래스를 가리킴
+
+4. 정답 123
+1. struct 키워드를 이용하여 정의 한다.
+2. 복사할 때는 깊은 복사가 이루어진다.
+3. 값 형식이다.
+4. 메소드를 가질 수 있다.
+
+public readonly double GetFahrenheit() -> public double GetFahrenheit()
+
+또는 
+
+return currentInCelsius * 1.8 + 32;
+
+다형성 : 객체가 여러 형태를 가질 수 있는 성질이 있음
+이로 인해 오버라이딩 시 변수를 어디에 집중 했느냐에 따라 사용되는 메서드가 달라짐
+
+class A{}
+class B : A {}
+
+A a = new A();
+A b = new B();
+B c = new B();
+경우 B 는 A를 상속 받았다.
+b 에서 오버라이딩된 메서드가 존재 할 때 A 메서드를 우선 한다.
+c 는 오버라이딩 된 메서드가 존재 할 때 B 메서드를 우선한다.
+
+다만 virtual 과 override 를 이용해서 오버라이딩 된 경우는 b 도 B 메서드를 사용한다.
+
+
+private static double GetDiscountRate(object client)
+{
+     double result = 0f;
+
+     var (job, age) = (((ValueTuple<string, int>)client)) ;
+    
+     switch (job)
+     {
+         case "학생" when age < 18: result = 0.2f; break;
+         case "학생": result = 0.1f; break;
+         case "일반" when age < 18: result = 0.1f; break;
+         case "일반": result = 0.05f; break;
+     }
+
+
+     return result;
+}
