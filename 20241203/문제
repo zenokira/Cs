@@ -1,0 +1,174 @@
+using System.Collections;
+using System.Runtime.CompilerServices;
+
+
+namespace workout
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            question app = new question();
+            app.solv2();
+        }
+    }
+
+    class question
+    {
+        public question()
+        {
+
+        }
+
+        public bool ConvertToInt(out int[] n,string str)
+        {
+            string[] s = str.Split(" ");
+            n = new int[s.Length];
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                n[i] = Convert.ToInt32(s[i]);
+            }
+
+            if (s.Length -1> n[0]) { return false; }
+            return true;
+        }
+
+        public void solv1()//
+        {
+            string s = Console.ReadLine();
+
+            if (!ConvertToInt(out int[] n, s)) { Console.WriteLine("IndexOutOfRange"); return; }
+            int[] n2 = n[1..];
+
+            int max = n2.Max();
+
+            char[,] arr2D = new char[max, n[0]];
+
+            for (int i = 0; i < max; i++)
+            {
+                for (int j = 0; j < n[0]; j++)
+                {
+                    if (n2[j] > i) arr2D[i, j] = '*';
+                    else arr2D[i, j] = ' ';
+                }
+            }
+
+
+            for (int i = 0; i < max; i++)
+            {
+                for (int j = 0; j < n[0]; j++)
+                {
+                    Console.Write(arr2D[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+        public void solv2()//arr
+        {
+            string s = Console.ReadLine();
+
+            if (!ConvertToInt(out int[] n, s)) { Console.WriteLine("IndexOutOfRange"); return; }
+
+            int[] arr = n[1..];
+            
+            Array.Sort(arr);
+
+            
+            int[] cnt = new int[n[0]];
+            int[] jumsu = new int[n[0]];
+
+            Array.Fill<int>(jumsu, -1);
+
+            jumsu[0] = arr[0];
+            int idx = 0;
+            foreach(int i in arr)
+            {
+                if (jumsu[idx] != i) {
+                    idx++;
+                    jumsu[idx] = i;
+                }
+                cnt[idx]++;
+            }
+
+            int resultIdx = Array.IndexOf(cnt, cnt.Max());
+
+            Console.WriteLine($"{jumsu[resultIdx]} {cnt[resultIdx]}");
+
+        }
+
+        public void solv3()//linq
+        {
+            string input = Console.ReadLine();
+            string[] strArray = input.Split(" ");
+            int n = Convert.ToInt32(strArray[0]);
+            strArray = strArray[1..];
+     
+            ArrayList arrayList = new ArrayList();
+       
+            
+          
+        }
+
+        public void solv4()//
+        {
+            int account = 0;
+            while (true)
+            { 
+                Console.WriteLine("입금 또는 출금을 입력해주세요 : ex 입금 1000원 ");         
+                string s = Console.ReadLine();
+
+                string[] action = s.Split(" ");
+
+                int money = wonDelete(action[1]);
+                int type = -1;
+                if (action[0].Equals("입금")) type = 0;
+                else if (action[0].Equals("출금")) type = 1;
+
+                change_Account(ref account, money, type);
+                Console.WriteLine($"[잔액 : {account}]");
+            }
+
+            void change_Account(ref int account, int money, int type)
+            {
+                if (type == 0) account += money;
+                else if (type == 1) account -= money;
+                else
+                    return;
+            }
+
+            int wonDelete(string s)
+            {
+                int idx = s.IndexOf("원");
+                int money = Convert.ToInt32(s.Substring(0,idx));
+                return money;
+            }
+        }
+        
+
+    }
+    class Login
+    {
+        ArrayList userID = new ArrayList();
+        ArrayList userPW = new ArrayList();
+        public Login()
+        {
+
+        }
+        public void LoginProgram()
+        {
+            int n = choiceMenu();
+
+
+        }
+
+
+        public int choiceMenu()
+        {
+            Console.WriteLine("[ 1. 회원가입  2. 로그인  3. 프로그램종료 ]");
+            int n = Convert.ToInt32(Console.ReadLine());
+            return n;
+        }
+    }
+
+}
