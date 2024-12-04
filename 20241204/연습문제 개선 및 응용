@@ -1,0 +1,307 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+
+namespace workout
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //question app = new question();
+            //app.solv3();
+
+            Login app = new Login();
+            app.LoginProgram();
+        }
+    }
+
+    class question
+    {
+        public question()
+        {
+
+        }
+
+        public bool ConvertToInt(out int[] n,string str)
+        {
+            string[] s = str.Split(" ");
+            n = new int[s.Length];
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                n[i] = Convert.ToInt32(s[i]);
+            }
+
+            if (s.Length -1> n[0]) { return false; }
+            return true;
+        }
+
+        public void solv1()//
+        {
+            string s = Console.ReadLine();
+
+            if (!ConvertToInt(out int[] n, s)) { Console.WriteLine("IndexOutOfRange"); return; }
+            int[] n2 = n[1..];
+
+            int max = n2.Max();
+
+            char[,] arr2D = new char[max, n[0]];
+
+            for (int i = 0; i < max; i++)
+            {
+                for (int j = 0; j < n[0]; j++)
+                {
+                    if (n2[j] > i) arr2D[i, j] = '*';
+                    else arr2D[i, j] = ' ';
+                }
+            }
+
+
+            for (int i = 0; i < max; i++)
+            {
+                for (int j = 0; j < n[0]; j++)
+                {
+                    Console.Write(arr2D[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+        public void solv2()//arr
+        {
+            int[] arr;
+            while (true)
+            {
+                string s = Console.ReadLine();
+
+                if (!ConvertToInt(out int[] n, s)) {
+                    Console.WriteLine("IndexOutOfRange");
+                }
+                else
+                {
+                    arr = n;
+                    break;
+                }
+            }
+            int num = arr[0];
+            arr = arr[1..];
+            
+            Array.Sort(arr);
+
+            
+            int[] cnt = new int[num];
+            int[] jumsu = new int[num];
+
+            Array.Fill<int>(jumsu, -1);
+
+            jumsu[0] = arr[0];
+            int idx = 0;
+            foreach(int i in arr)
+            {
+                if (jumsu[idx] != i) {
+                    idx++;
+                    jumsu[idx] = i;
+                }
+                cnt[idx]++;
+            }
+
+            int resultIdx = Array.IndexOf(cnt, cnt.Max());
+
+            Console.WriteLine($"{jumsu[resultIdx]} {cnt[resultIdx]}");
+
+        }
+
+        public void solv3()//for 1
+        {
+            string[] str;
+            int n = 0;
+            while (true)
+            {
+                str = Console.ReadLine().Split(" ");
+                n = Convert.ToInt32(str[0]);
+                str = str[1..];
+                if (str.Length != n)
+                {
+                    Console.WriteLine("Inconsistency Of Range");
+                    str = null;
+                }
+                else
+                    break;
+            }
+
+            Dictionary<string,int> dic = new Dictionary<string,int>();
+            foreach (string s in str)
+            {
+                if(dic.ContainsKey(s)) dic[s]++;
+                else dic[s] = 1;
+            }
+
+            foreach(KeyValuePair<string,int> pair in dic)
+            {
+                if (pair.Value == dic.Values.Max())
+                    Console.WriteLine(pair.Key);
+            }
+        }
+
+        public void solv4()//
+        {
+            int account = 0;
+            while (true)
+            { 
+                Console.WriteLine("입금 또는 출금을 입력해주세요 : ex 입금 1000원 ");         
+                string s = Console.ReadLine();
+
+                string[] action = s.Split(" ");
+
+                int money = wonDelete(action[1]);
+
+                if (action[0].StartsWith("입금"))
+                {
+                    account += money;
+                }
+                else if (action[0].StartsWith("출금"))
+                {
+                    if (account < money)
+                    {
+                        Console.WriteLine(" # 출금실패 #  소지금 보다 많은 금액을 출금하려 합니다.");
+                    }
+                    else
+                    {
+                        account -= money;
+                    }
+                }
+
+                Console.WriteLine($"[잔액 : {account}]");
+            }
+
+          
+            int wonDelete(string s)
+            {
+                int money = 0;
+                if (s.EndsWith("원"))
+                {
+                    int idx = s.IndexOf("원");
+                    money = Convert.ToInt32(s.Substring(0, idx));
+                }
+                else
+                {
+                    money = Convert.ToInt32(s);
+                }
+                return money;
+            }
+        }
+        
+
+    }
+    class Login
+    {
+        ArrayList userID = new ArrayList();
+        ArrayList userPW = new ArrayList();
+        public Login()
+        {
+
+        }
+        public void LoginProgram()
+        {
+            while (true) { 
+            int n = choiceMenu();
+
+                switch (n)
+                {
+                    case 1:
+                        while (true)
+                        {
+                            bool flag = SignUp();
+                            if (flag) { 
+                                break; 
+                            }
+                            else if(backspace())
+                            {
+                                break;
+                            }
+                        }
+                        break;
+                    case 2:
+                        while (true)
+                        {
+                            bool flag = SignIn();
+                            if (flag)
+                            {
+                                showAlert("로그인 되셨습니다.");
+                                break;
+                            }
+                            else
+                            {
+                                showAlert("로그인에 실패하였습니다. ID 또는 PASSWORD 를 확인해주세요");
+                                if (backspace()) break;
+                            }
+                        }
+                        break;
+                    case 3:
+                        showAlert("프로그램을 종료합니다.");
+                        return;
+                }
+            }
+        }
+
+        private bool backspace()
+        {
+            showAlert("뒤로가기를 원하시면 '0', 계속 하시려면 '1' 을 입력해주세요");
+
+            string s = Console.ReadLine();
+            return s.Equals("0");
+        }
+
+        private void showAlert(string msg)
+        {
+            Console.WriteLine();
+            string str = "# " + msg + " #";
+            Console.WriteLine(str);
+            Console.WriteLine();
+        }
+        private bool SignUp()
+        {
+            Console.Write("[ 등록하실 ID 를 입력해 주세요 ] : ");
+            string ID = Console.ReadLine();
+           
+            if (userID.Contains(ID))
+            {
+                showAlert("이미 등록된 ID 입니다. 다른 ID 를 사용해주세요.");
+                return false; 
+            }
+            Console.Write("[ 등록하실 Password 를 입력해 주세요 ] : ");
+            string PW = Console.ReadLine();
+            
+
+            userID.Add(ID);
+            userPW.Add(PW);
+
+            return true;
+        }
+
+        private bool SignIn()
+        {
+            Console.Write("[ 로그인 하실 ID 를 입력해 주세요 ] : ");
+            string ID = Console.ReadLine();
+
+            Console.Write("[ 로그인 하실 Password 를 입력해 주세요 ] : ");
+            string PW = Console.ReadLine();
+
+            if (userID.Contains(ID))
+            {
+                int idx = userID.IndexOf(ID);
+                return userPW[idx].Equals(PW);
+            }
+            return false;
+        }
+        private int choiceMenu()
+        {
+            Console.WriteLine("[ 1. 회원가입  2. 로그인  3. 프로그램종료 ]");
+            int n = Convert.ToInt32(Console.ReadLine());
+            return n;
+        }
+    }
+
+}
