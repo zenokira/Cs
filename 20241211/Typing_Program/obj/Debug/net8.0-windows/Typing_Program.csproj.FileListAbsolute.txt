@@ -1,0 +1,16 @@
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\bin\Debug\net8.0-windows\Typing_Program.exe
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\bin\Debug\net8.0-windows\Typing_Program.deps.json
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\bin\Debug\net8.0-windows\Typing_Program.runtimeconfig.json
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\bin\Debug\net8.0-windows\Typing_Program.dll
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\bin\Debug\net8.0-windows\Typing_Program.pdb
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\Typing_Program.Form1.resources
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\Typing_Program.csproj.GenerateResource.cache
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\Typing_Program.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\Typing_Program.AssemblyInfoInputs.cache
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\Typing_Program.AssemblyInfo.cs
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\Typing_Program.csproj.CoreCompileInputs.cache
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\Typing_Program.dll
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\refint\Typing_Program.dll
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\Typing_Program.pdb
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\Typing_Program.genruntimeconfig.cache
+C:\Users\D413\Desktop\수강생413\김동수\C#\Typing_Program\obj\Debug\net8.0-windows\ref\Typing_Program.dll
