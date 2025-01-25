@@ -5,17 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ComputerCheck
 {
-    public partial class Class1 : Form
+    public partial class Class3 : Form
     {
         const int COMPUTER_COUNT = 9;
-        const string FILENAME = "1강의실.json";
+        const string FILENAME = "3강의실.json";
         string LoadJsonString;
 
         bool OpenChckFlag = false;
@@ -23,12 +22,12 @@ namespace ComputerCheck
 
         string[] CommentString = new string[COMPUTER_COUNT]
             {"X","X","X","X","X","X","X","X","X"};
-        public Class1()
+        public Class3()
         {
             InitializeComponent();
         }
 
-        private void Class1_Load(object sender, EventArgs e)
+        private void Class2_Load(object sender, EventArgs e)
         {
             if (!OpenChckFlag)
             {
@@ -144,6 +143,11 @@ namespace ComputerCheck
 
             if (textBox9.Text.Equals(CommentString[8])) CommentString[8] = "X";
             else CommentString[8] = textBox9.Text;
+        }
+
+        private void Class3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

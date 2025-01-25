@@ -12,10 +12,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ComputerCheck
 {
-    public partial class Class1 : Form
+    public partial class Class4 : Form
     {
         const int COMPUTER_COUNT = 9;
-        const string FILENAME = "1강의실.json";
+        const string FILENAME = "4강의실.json";
         string LoadJsonString;
 
         bool OpenChckFlag = false;
@@ -23,12 +23,12 @@ namespace ComputerCheck
 
         string[] CommentString = new string[COMPUTER_COUNT]
             {"X","X","X","X","X","X","X","X","X"};
-        public Class1()
+        public Class4()
         {
             InitializeComponent();
         }
 
-        private void Class1_Load(object sender, EventArgs e)
+        private void Class4_Load(object sender, EventArgs e)
         {
             if (!OpenChckFlag)
             {

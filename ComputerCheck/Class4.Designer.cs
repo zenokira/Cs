@@ -1,6 +1,6 @@
 ﻿namespace ComputerCheck
 {
-    partial class Class2
+    partial class Class4
     {
         /// <summary>
         /// Required designer variable.
@@ -219,7 +219,7 @@
             label5.Text = "5";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // Class2
+            // Class4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -242,9 +242,9 @@
             Controls.Add(label4);
             Controls.Add(label6);
             Controls.Add(label5);
-            Name = "Class2";
-            Text = "2강의실";
-            Load += Class2_Load;
+            Name = "Class4";
+            Text = "4강의실";
+            Load += Class4_Load;
             ResumeLayout(false);
             PerformLayout();
         }

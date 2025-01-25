@@ -12,23 +12,23 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ComputerCheck
 {
-    public partial class Class1 : Form
+    public partial class Class9 : Form
     {
-        const int COMPUTER_COUNT = 9;
-        const string FILENAME = "1강의실.json";
+        const int COMPUTER_COUNT = 6;
+        const string FILENAME = "9강의실.json";
         string LoadJsonString;
 
         bool OpenChckFlag = false;
 
 
         string[] CommentString = new string[COMPUTER_COUNT]
-            {"X","X","X","X","X","X","X","X","X"};
-        public Class1()
+            {"X","X","X","X","X","X"};
+        public Class9()
         {
             InitializeComponent();
         }
 
-        private void Class1_Load(object sender, EventArgs e)
+        private void Class9_Load(object sender, EventArgs e)
         {
             if (!OpenChckFlag)
             {
@@ -102,9 +102,6 @@ namespace ComputerCheck
             textBox4.Text = CommentString[3];
             textBox5.Text = CommentString[4];
             textBox6.Text = CommentString[5];
-            textBox7.Text = CommentString[6];
-            textBox8.Text = CommentString[7];
-            textBox9.Text = CommentString[8];
         }
 
         string sliceToComment(string str)
@@ -135,15 +132,6 @@ namespace ComputerCheck
 
             if (textBox6.Text.Equals(CommentString[5])) CommentString[5] = "X";
             else CommentString[5] = textBox6.Text;
-
-            if (textBox7.Text.Equals(CommentString[6])) CommentString[6] = "X";
-            else CommentString[6] = textBox7.Text;
-
-            if (textBox8.Text.Equals(CommentString[7])) CommentString[7] = "X";
-            else CommentString[7] = textBox8.Text;
-
-            if (textBox9.Text.Equals(CommentString[8])) CommentString[8] = "X";
-            else CommentString[8] = textBox9.Text;
         }
     }
 }

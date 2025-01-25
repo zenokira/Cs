@@ -7,6 +7,24 @@
     <Compile Update="Class2.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Class3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Class4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Class6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Class7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Class8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Class9.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="강의실현황판.cs">
       <SubType>Form</SubType>
     </Compile>

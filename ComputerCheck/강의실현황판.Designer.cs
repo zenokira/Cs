@@ -1,4 +1,8 @@
-﻿namespace ComputerCheck
+﻿using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Forms;
+using System.Xml.Linq;
+
+namespace ComputerCheck
 {
     partial class 강의실현황판
     {
@@ -63,6 +67,7 @@
             button_CLASS4.TabIndex = 3;
             button_CLASS4.Text = "4강의실";
             button_CLASS4.UseVisualStyleBackColor = true;
+            button_CLASS4.Click += button_Click;
             // 
             // button_CLASS3
             // 
@@ -72,6 +77,7 @@
             button_CLASS3.TabIndex = 2;
             button_CLASS3.Text = "3강의실";
             button_CLASS3.UseVisualStyleBackColor = true;
+            button_CLASS3.Click += button_Click;
             // 
             // button_CLASS2
             // 
@@ -114,6 +120,7 @@
             button_CLASS9.TabIndex = 5;
             button_CLASS9.Text = "9강의실";
             button_CLASS9.UseVisualStyleBackColor = true;
+            button_CLASS9.Click += button_Click;
             // 
             // button_CLASS8
             // 
@@ -123,6 +130,7 @@
             button_CLASS8.TabIndex = 4;
             button_CLASS8.Text = "8강의실";
             button_CLASS8.UseVisualStyleBackColor = true;
+            button_CLASS8.Click += button_Click;
             // 
             // button_CLASS7
             // 
@@ -132,6 +140,7 @@
             button_CLASS7.TabIndex = 3;
             button_CLASS7.Text = "7강의실";
             button_CLASS7.UseVisualStyleBackColor = true;
+            button_CLASS7.Click += button_Click;
             // 
             // button_CLASS6
             // 
@@ -141,6 +150,7 @@
             button_CLASS6.TabIndex = 2;
             button_CLASS6.Text = "6강의실";
             button_CLASS6.UseVisualStyleBackColor = true;
+            button_CLASS6.Click += button_Click;
             // 
             // 강의실현황판
             // 

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sw4_5\\Desktop\\수강생708\\김동수\\ComputerCheck\\ComputerCheck.csproj": {}
+    "C:\\Users\\sw\\source\\repos\\ComputerCheck\\ComputerCheck.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sw4_5\\Desktop\\수강생708\\김동수\\ComputerCheck\\ComputerCheck.csproj": {
+    "C:\\Users\\sw\\source\\repos\\ComputerCheck\\ComputerCheck.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sw4_5\\Desktop\\수강생708\\김동수\\ComputerCheck\\ComputerCheck.csproj",
+        "projectUniqueName": "C:\\Users\\sw\\source\\repos\\ComputerCheck\\ComputerCheck.csproj",
         "projectName": "ComputerCheck",
-        "projectPath": "C:\\Users\\sw4_5\\Desktop\\수강생708\\김동수\\ComputerCheck\\ComputerCheck.csproj",
-        "packagesPath": "C:\\Users\\sw4_5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sw4_5\\Desktop\\수강생708\\김동수\\ComputerCheck\\obj\\",
+        "projectPath": "C:\\Users\\sw\\source\\repos\\ComputerCheck\\ComputerCheck.csproj",
+        "packagesPath": "C:\\Users\\sw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sw\\source\\repos\\ComputerCheck\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sw4_5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
