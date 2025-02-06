@@ -1,0 +1,16 @@
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\bin\Debug\net8.0-windows\EchoClient.exe
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\bin\Debug\net8.0-windows\EchoClient.deps.json
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\bin\Debug\net8.0-windows\EchoClient.runtimeconfig.json
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\bin\Debug\net8.0-windows\EchoClient.dll
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\bin\Debug\net8.0-windows\EchoClient.pdb
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\EchoClient.Form1.resources
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\EchoClient.csproj.GenerateResource.cache
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\EchoClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\EchoClient.AssemblyInfoInputs.cache
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\EchoClient.AssemblyInfo.cs
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\EchoClient.csproj.CoreCompileInputs.cache
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\EchoClient.dll
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\refint\EchoClient.dll
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\EchoClient.pdb
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\EchoClient.genruntimeconfig.cache
+C:\Users\sw4_5\Desktop\수강생708\김동수\EchoClient\obj\Debug\net8.0-windows\ref\EchoClient.dll
