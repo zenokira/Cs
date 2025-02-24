@@ -1,0 +1,16 @@
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\bin\Debug\net8.0-windows\Minesweeper.exe
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\bin\Debug\net8.0-windows\Minesweeper.deps.json
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\bin\Debug\net8.0-windows\Minesweeper.runtimeconfig.json
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\bin\Debug\net8.0-windows\Minesweeper.dll
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\bin\Debug\net8.0-windows\Minesweeper.pdb
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\Minesweeper.지뢰찾기.resources
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\Minesweeper.csproj.GenerateResource.cache
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\Minesweeper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\Minesweeper.AssemblyInfoInputs.cache
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\Minesweeper.AssemblyInfo.cs
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\Minesweeper.csproj.CoreCompileInputs.cache
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\Minesweeper.dll
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\refint\Minesweeper.dll
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\Minesweeper.pdb
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\Minesweeper.genruntimeconfig.cache
+C:\Users\sw4_5\Desktop\수강생408\김동수\Minesweeper\obj\Debug\net8.0-windows\ref\Minesweeper.dll
