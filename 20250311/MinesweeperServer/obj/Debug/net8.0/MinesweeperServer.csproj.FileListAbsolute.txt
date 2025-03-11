@@ -1,0 +1,14 @@
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\bin\Debug\net8.0\MinesweeperServer.exe
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\bin\Debug\net8.0\MinesweeperServer.deps.json
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\bin\Debug\net8.0\MinesweeperServer.runtimeconfig.json
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\bin\Debug\net8.0\MinesweeperServer.dll
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\bin\Debug\net8.0\MinesweeperServer.pdb
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\obj\Debug\net8.0\MinesweeperServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\obj\Debug\net8.0\MinesweeperServer.AssemblyInfoInputs.cache
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\obj\Debug\net8.0\MinesweeperServer.AssemblyInfo.cs
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\obj\Debug\net8.0\MinesweeperServer.csproj.CoreCompileInputs.cache
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\obj\Debug\net8.0\MinesweeperServer.dll
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\obj\Debug\net8.0\refint\MinesweeperServer.dll
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\obj\Debug\net8.0\MinesweeperServer.pdb
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\obj\Debug\net8.0\MinesweeperServer.genruntimeconfig.cache
+C:\Users\sw4_5\Desktop\수강생408\김동수\MinesweeperServer\obj\Debug\net8.0\ref\MinesweeperServer.dll
