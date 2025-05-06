@@ -1,0 +1,259 @@
+// Refactored Minesweeper Server Code
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+
+namespace MinesweeperServer
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var server = new MinesweeperServer();
+            AppDomain.CurrentDomain.ProcessExit += (_, __) => server.Shutdown();
+            server.Run();
+        }
+    }
+
+    class MinesweeperServer
+    {
+        private enum Command { Start, Level, Retry, Exit, Click, GameOver, Server }
+
+        private const string StartWord = "@@";
+        private const string EndWord = "##";
+
+        private readonly int[] MineCounts = { 10, 40, 99 };
+        private readonly int[,] GamePanels = { { 9, 9 }, { 16, 16 }, { 30, 16 } };
+        private const int ServerPort = 9900;
+        private const int BufferSize = 512;
+
+        private readonly Dictionary<int, Socket> clients = new();
+        private readonly List<List<int>> playing = new();
+        private readonly List<List<int>> waiting = new();
+
+        private int nextClientId = 0;
+        private readonly Random random = new();
+        private const int ServerId = -9999;
+
+        public MinesweeperServer()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                playing.Add(new List<int>());
+                waiting.Add(new List<int>());
+            }
+        }
+
+        public void Run()
+        {
+            var matchThread = new Thread(MatchPlayers);
+            matchThread.Start();
+
+            var listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            listener.Bind(new IPEndPoint(IPAddress.Any, ServerPort));
+            listener.Listen(5);
+
+            Console.WriteLine($"[서버] {ServerPort}번 포트에서 대기 중...");
+
+            while (true)
+            {
+                Socket client = listener.Accept();
+                int clientId = nextClientId++;
+                clients[clientId] = client;
+
+                Console.WriteLine($"[서버] 클라이언트 접속: {client.RemoteEndPoint}");
+                new Thread(() => HandleClient(clientId)).Start();
+            }
+        }
+
+        public void Shutdown()
+        {
+            Console.WriteLine("[서버 종료] 클라이언트에게 서버 종료 명령 전송");
+            foreach (var (id, socket) in clients.ToList())
+            {
+                try { Send(Command.Server, ServerId, id, "서버종료"); } catch { }
+            }
+        }
+
+        private void MatchPlayers()
+        {
+            while (true)
+            {
+                for (int level = 0; level < 3; level++)
+                {
+                    while (waiting[level].Count >= 2)
+                    {
+                        int p1 = PopWaiting(level);
+                        int p2 = PopWaiting(level);
+                        if (p1 < 0 || p2 < 0) break;
+                        playing[level].AddRange(new[] { p1, p2 });
+
+                        var mines = GenerateMines(level);
+                        string mineStr = MinesToString(mines);
+                        Send(Command.Start, p1, p2, mineStr);
+                        Send(Command.Start, p2, p1, mineStr);
+
+                        Point start;
+                        do
+                        {
+                            start = new Point(random.Next(GamePanels[level, 0]), random.Next(GamePanels[level, 1]));
+                        } while (mines.Contains(start));
+
+                        Send(Command.Click, ServerId, p1, $"{start.X}*{start.Y}");
+                        Send(Command.Click, ServerId, p2, $"{start.X}*{start.Y}");
+                    }
+                }
+            }
+        }
+
+        private int PopWaiting(int level) => waiting[level].Count > 0 ? waiting[level].Pop() : -1;
+
+        private void HandleClient(int clientId)
+        {
+            Socket socket = clients[clientId];
+            try
+            {
+                while (true)
+                {
+                    string recvData = Receive(socket);
+                    if (!IsValidData(recvData)) continue;
+
+                    foreach (var packet in ParsePackets(recvData))
+                    {
+                        if (!TryParsePacket(packet, out var cmd, out var sender, out var receiver, out var data)) continue;
+
+                        HandleCommand(cmd, sender, receiver, data, clientId);
+                    }
+                }
+            }
+            catch { }
+            finally
+            {
+                socket.Close();
+                clients.Remove(clientId);
+            }
+        }
+
+        private void HandleCommand(Command cmd, int sender, int receiver, string data, int clientId)
+        {
+            switch (cmd)
+            {
+                case Command.Level:
+                    int level = int.Parse(data);
+                    if (IsPlaying(sender)) Send(Command.Server, ServerId, sender, "error");
+                    waiting[level].Add(clientId);
+                    break;
+                case Command.Retry:
+                    int currentLevel = GetPlayerLevel(sender);
+                    if (currentLevel != -1)
+                    {
+                        playing[currentLevel].Remove(sender);
+                        waiting[currentLevel].Add(sender);
+                    }
+                    break;
+                case Command.Exit:
+                    int levelIdx = GetPlayerLevel(sender);
+                    if (levelIdx != -1) playing[levelIdx].Remove(sender);
+                    if (clients.TryGetValue(clientId, out var socket))
+                    {
+                        socket.Close();
+                        clients.Remove(clientId);
+                    }
+                    Send(Command.Exit, sender, receiver, "exit");
+                    break;
+                case Command.Click:
+                    Send(Command.Click, sender, receiver, data);
+                    break;
+                case Command.GameOver:
+                    HandleGameOver(sender, receiver, data);
+                    break;
+                case Command.Server:
+                    Send(Command.Server, ServerId, clientId, clientId.ToString());
+                    break;
+            }
+        }
+
+        private void HandleGameOver(int sender, int receiver, string result)
+        {
+            Send(Command.Click, sender, receiver, "click");
+            string opposite = result switch
+            {
+                "win" => "lose",
+                "lose" => "win",
+                "draw" => "draw",
+                _ => result
+            };
+            Send(Command.GameOver, ServerId, sender, result);
+            Send(Command.GameOver, ServerId, receiver, opposite);
+        }
+
+        private bool IsValidData(string data) => data.StartsWith(StartWord) && data.EndsWith(EndWord);
+
+        private IEnumerable<string> ParsePackets(string raw) => raw.Split(EndWord, StringSplitOptions.RemoveEmptyEntries);
+
+        private bool TryParsePacket(string raw, out Command cmd, out int sender, out int receiver, out string data)
+        {
+            cmd = default;
+            sender = receiver = -1;
+            data = "";
+            try
+            {
+                string content = raw.Replace(StartWord, "");
+                string[] parts = content.Split(' ', 4);
+                cmd = Enum.Parse<Command>(parts[0], true);
+                sender = int.Parse(parts[1]);
+                receiver = int.Parse(parts[2]);
+                data = parts.Length == 4 ? parts[3] : "";
+                return true;
+            }
+            catch { return false; }
+        }
+
+        private string Receive(Socket socket)
+        {
+            byte[] buffer = new byte[BufferSize];
+            int length = socket.Receive(buffer);
+            return Encoding.UTF8.GetString(buffer, 0, length);
+        }
+
+        private void Send(Command cmd, int sender, int receiver, string data)
+        {
+            string msg = $"{StartWord}{cmd.ToString().ToLower()} {sender} {receiver} {data}{EndWord}";
+            byte[] bytes = Encoding.UTF8.GetBytes(msg);
+            if (clients.TryGetValue(receiver, out var socket)) socket.Send(bytes);
+        }
+
+        private List<Point> GenerateMines(int level)
+        {
+            HashSet<Point> mines = new();
+            while (mines.Count < MineCounts[level])
+            {
+                int x = random.Next(GamePanels[level, 0]);
+                int y = random.Next(GamePanels[level, 1]);
+                mines.Add(new Point(x, y));
+            }
+            return mines.ToList();
+        }
+
+        private string MinesToString(List<Point> mines) => string.Join(" ", mines.Select(p => $"{p.X}*{p.Y}"));
+
+        private bool IsPlaying(int id) => GetPlayerLevel(id) != -1;
+
+        private int GetPlayerLevel(int id) => playing.FindIndex(l => l.Contains(id));
+    }
+
+    static class ListExtensions
+    {
+        public static int Pop(this List<int> list)
+        {
+            int val = list[0];
+            list.RemoveAt(0);
+            return val;
+        }
+    }
+}
