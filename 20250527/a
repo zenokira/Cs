@@ -1,0 +1,6 @@
+1. room 클래스 추가
+2. socket_play_level_list 삭제
+
+다음 시간에 할 내용
+1. room 에서 선공 정하기 ( retry 시 선공 변경하기 )
+2. 선공을 send 하기
