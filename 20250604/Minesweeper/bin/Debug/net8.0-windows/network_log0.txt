@@ -1,0 +1,87 @@
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 1<EOW>
+<SOW>Game 1 0 MineMap 4*1 5*6 5*2 5*0 7*2 2*3 0*1 6*4 1*4 2*2<EOW>
+<SOW>Game -9999 0 FirstClick 3*5<EOW>
+<SOW>System -9999 0 Disconnect 서버종료<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 0<EOW>
+<SOW>Game 1 0 MineMap 6*8 5*1 1*1 2*3 6*0 1*7 6*2 8*3 7*4 1*4<EOW>
+<SOW>Game -9999 0 FirstClick 7*0<EOW>
+<SOW>System -9999 0 Disconnect 서버종료<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 0<EOW>
+<SOW>Game 1 0 MineMap 0*6 2*6 2*7 7*4 0*5 6*2 3*7 7*1 7*5 3*2<EOW>
+<SOW>Game -9999 0 FirstClick 0*4<EOW>
+<SOW>System -9999 0 Disconnect 서버종료<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 1<EOW>
+<SOW>Game 1 0 MineMap 8*8 6*8 7*4 8*5 6*3 0*2 0*0 4*2 4*1 5*3<EOW>
+<SOW>Game -9999 0 FirstClick 5*2<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 1<EOW>
+<SOW>Game 1 0 MineMap 2*4 7*0 6*0 4*7 7*1 5*1 3*6 8*8 3*7 3*2<EOW>
+<SOW>Game -9999 0 FirstClick 7*7<EOW>
+<SOW>System -9999 0 Disconnect 서버종료<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 1<EOW>
+<SOW>Game 1 0 MineMap 8*5 3*7 2*3 6*5 3*0 1*7 4*7 0*0 1*5 5*5<EOW>
+<SOW>Game -9999 0 FirstClick 2*8<EOW>
+<SOW>System -9999 0 Disconnect 서버종료<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 1<EOW>
+<SOW>Game 1 0 MineMap 2*3 3*8 5*4 7*5 5*2 0*4 1*6 4*5 1*5 8*6<EOW>
+<SOW>Game -9999 0 FirstClick 4*4<EOW>
+<SOW>Game 1 0 Click Dead<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game -9999 0 Result Lose<EOW>
+<SOW>System -9999 0 Disconnect 서버종료<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 1<EOW>
+<SOW>Game 1 0 MineMap 7*8 6*0 0*4 3*1 2*1 5*7 8*6 1*4 1*1 8*2<EOW>
+<SOW>Game -9999 0 FirstClick 0*8<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 0<EOW>
+<SOW>Game 1 0 MineMap 4*0 5*2 5*5 8*1 6*0 2*7 0*5 8*7 2*4 6*1<EOW>
+<SOW>Game -9999 0 FirstClick 5*6<EOW>
+<SOW>Game -9999 0 Result Win<EOW>
+<SOW>System -9999 0 Disconnect 서버종료<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 1<EOW>
+<SOW>Game 1 0 MineMap 7*8 5*3 2*8 7*0 5*5 4*2 7*5 2*2 0*3 8*5<EOW>
+<SOW>Game -9999 0 FirstClick 8*2<EOW>
+<SOW>Game 1 0 Click Dead<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Dead<EOW>
+<SOW>Game 1 0 Click Dead<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>Game 1 0 Click Alive<EOW>
+<SOW>System -9999 0 Disconnect 서버종료<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 1<EOW>
+<SOW>Game 1 0 MineMap 2*6 8*5 4*8 4*5 4*2 8*0 3*7 0*1 8*7 5*4<EOW>
+<SOW>Game -9999 0 FirstClick 2*0<EOW>
+<SOW>Game 1 0 Click Result Clear 20 <EOW>
+<SOW>Game 1 0 Click Dead<EOW>
+<SOW>System -9999 0 Disconnect 서버종료<EOW>
+<SOW>Server 1 0 OpponentInfo <EOW>
+<SOW>Server 1 0 TurnInfo 1<EOW>
+<SOW>Game 1 0 MineMap 1*0 0*3 5*3 3*4 2*4 6*6 7*8 8*5 2*0 4*2<EOW>
+<SOW>Game -9999 0 FirstClick 1*4<EOW>
+<SOW>Game 1 0 Click Dead<EOW>
+<SOW>Game 1 0 Click Dead<EOW>
+<SOW>Game -9999 0 Result Win<EOW>
