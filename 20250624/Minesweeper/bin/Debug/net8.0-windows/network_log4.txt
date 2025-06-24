@@ -1,0 +1,7 @@
+<SOW>Server 3 4 OpponentInfo <EOW>
+<SOW>Server 3 4 TurnInfo 3<EOW>
+<SOW>Game 3 4 MineMap 7*8 1*0 1*4 0*3 7*5 3*1 2*8 8*7 3*3 3*0<EOW>
+<SOW>Game -9999 4 FirstClick 0*1<EOW>
+<SOW>Game 3 4 Click Alive<EOW>
+<SOW>System -9999 4 Disconnect 서버종료<EOW>
+<SOW>System -9999 4 Disconnect 서버종료<EOW>
