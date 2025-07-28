@@ -1,0 +1,6 @@
+<SOW>Server -9999 6 Matching <EOW>
+<SOW>Server 7 6 OpponentInfo <EOW>
+<SOW>Server 7 6 TurnInfo 7<EOW>
+<SOW>Game 7 6 MineMap 7*4 5*1 0*7 7*2 0*2 5*7 3*6 2*4 7*8 4*5<EOW>
+<SOW>System -9999 6 Wait OppExit<EOW>
+<SOW>System -9999 6 Disconnect 서버종료<EOW>
