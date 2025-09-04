@@ -1,0 +1,9 @@
+﻿
+Form.Size: { Width = 500, Height = 600}
+ClientSize: { Width = 484, Height = 561}
+
+width gap = 16
+height gap = 39
+
+rectangle 400x400
+rectangle.left = 42  rectangle.top = 141
